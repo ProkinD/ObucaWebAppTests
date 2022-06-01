@@ -1,0 +1,49 @@
+﻿@model ObućaWebApp.Models.Obuca
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalji</h2>
+
+<div>
+    <h4>Obuca</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Slika
+        </dt>
+        <dd class="col-sm-10 h">
+            <img class="igm-fluid img-thumbnail" style="margin-bottom: 5rem" src="@Html.DisplayFor(model => model.UrlSlike)" alt="Slika artikla" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Velicina)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Velicina)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kolicina)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kolicina)
+        </dd>          
+    </dl>
+</div>
+    <p>
+        @Html.ActionLink("Ažuriraj", "Edit", new { id = Model.ObucaId }) |
+        @Html.ActionLink("Nazad", "Index")
+    </p>

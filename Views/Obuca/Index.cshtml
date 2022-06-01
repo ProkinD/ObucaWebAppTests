@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ObućaWebApp.Models.Obuca>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h1>Lista artikla</h1>
+
+<p>
+    @Html.ActionLink("Dodaj novi artikal", "Create")
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Slika
+        </th>
+        <th>
+            Prodavnica
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Velicina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kolicina)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+@foreach (var item in Model) {
+    <tr>
+        <td class="w-25">
+            <a href="/Obuca/Details/@item.ObucaId">
+            <img class="img-fluid img-thumbnail" style="max-width: 300px;" src="@Html.DisplayFor(modelItem => item.UrlSlike)" alt="Slika artikla" /></a>               
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prodavnica.Adresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Velicina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kolicina)
+        </td>
+        <td>
+            @Html.ActionLink("Ažuriraj", "Edit", new { id=item.ObucaId }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.ObucaId }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.ObucaId })
+        </td>
+    </tr>
+}
+
+</table>

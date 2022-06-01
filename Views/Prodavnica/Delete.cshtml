@@ -1,0 +1,57 @@
+﻿@model ObućaWebApp.Models.Prodavnica
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Brisanje</h2>
+
+<h3>Da li ste sigurni da želite da obrišete ovo?</h3>
+<div>
+    <h4>Prodavnica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.URLSlike)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.URLSlike)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Nazad", "Index")
+        </div>
+    }
+</div>

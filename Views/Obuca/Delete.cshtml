@@ -1,0 +1,62 @@
+﻿@model ObućaWebApp.Models.Obuca
+
+@{
+    ViewBag.Title = "Delete";
+   // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Brisanje</h1>
+
+<h3>Da li ste sigurni da želite da uklonite atikal?</h3>
+<div>
+    <h4>Artikal</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Slika
+        </dt>
+        <dd class="col-sm-10 h">
+            <img class="igm-fluid img-thumbnail" src="@Html.DisplayFor(model => model.UrlSlike)" alt="Slika artikla" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Velicina)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Velicina)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kolicina)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kolicina)
+        </dd>
+        <dt class="col-sm-10">
+            Prodavnica
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Prodavnica.Adresa)<br>
+            @Html.DisplayFor(model => model.Prodavnica.Grad)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Nazad", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,87 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+img-thumbnail {
+    max-height: 400px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: darkolivegreen;
+    border-color: darkolivegreen;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: forestgreen;
+        border-color: forestgreen;
+    }
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-image: url("https://bbbslubbock.org/wp-content/uploads/2018/10/grey-background-for-site-for-website-1432015867.jpg");
+    background-size: cover;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+a {
+    font-weight: bold;
+    color: darkslateblue;
+}
